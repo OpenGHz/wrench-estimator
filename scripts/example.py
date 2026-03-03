@@ -35,7 +35,7 @@ if __name__ == "__main__":
         airbot_play.get_joint_eff(),
     )
 
-    print("Estimated External Force:", estimator.get_ext_force())
+    print("Estimated External Wrench:", estimator.get_ext_wrench())
     print("Current Pose:", airbot_play.get_end_pose())
 
     input("Press Enter to exit...")

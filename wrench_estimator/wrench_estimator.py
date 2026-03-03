@@ -30,7 +30,7 @@ class WrenchEstimator:
         self.tau_measured = tau[: self.ndof].copy() if tau is not None else None
         mujoco.mj_forward(self.mj_model, self.mj_data)
 
-    def get_ext_force(self):
+    def get_ext_wrench(self):
         if self.tau_measured is None:
             raise ValueError(
                 "Measured joint torque is required for external force estimation"
