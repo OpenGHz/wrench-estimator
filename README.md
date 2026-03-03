@@ -11,7 +11,7 @@ pixi install
 ## Usage
 
 ```python
-pixi run estimate-wrench
+pixi run python scripts/example.py
 ```
 
 ## Development

@@ -28,8 +28,8 @@ python = "3.12.*"
 wrench-estimator = { path = ".", editable = true }
 airbot-py = { path = "deps/airbot_py-5.1.6-py3-none-any.whl"}
 
-[tool.pixi.feature.build.dependencies]
-# python-build = "*"
+[tool.pixi.feature.build.pypi-dependencies]
+build = "*"
 
 [tool.pixi.feature.publish.dependencies]
 twine = "*"
