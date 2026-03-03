@@ -10,7 +10,7 @@ if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     mjcf_path = os.path.join(
         script_dir,
-        "model_assets",
+        "../model_assets",
         "mjcf",
         "manipulator",
         "robot_airbot_play_force.xml",
