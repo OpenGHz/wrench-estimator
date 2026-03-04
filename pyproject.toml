@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Mujoco-based end-effector wrench estimator for robotic arms"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-dependencies = ["numpy", "mujoco>=2.3.7"]
+dependencies = ["numpy", "mujoco>=2.3.7", "rerun-sdk>=0.30.0,<0.31"]
 
 [tool.pixi.workspace]
 channels = [

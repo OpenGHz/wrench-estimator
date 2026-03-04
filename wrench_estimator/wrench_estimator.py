@@ -63,5 +63,5 @@ class WrenchEstimator:
         tau_ext_joint = self.tau_measured - tau_model
 
         # Solve J^T * wrench = tau_ext_joint in least-squares sense.
-        force_ext = np.linalg.pinv(J.T) @ -tau_ext_joint
+        force_ext = np.linalg.pinv(J.T) @ tau_ext_joint
         return force_ext

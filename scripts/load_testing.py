@@ -33,13 +33,21 @@ if __name__ == "__main__":
     get_joint_eff = airbot_play.get_joint_eff
     # airbot_play.get_joint_eff = lambda: np.asarray(get_joint_eff()) / coeff
     all_recorded = {}
-    for load in (0, 0.5):
+    for load in (0, 0.5, 0.319, 0.382):
         print(f"\n=== Testing with {load}kg load ===")
-        input(f"Apply {load}kg load to the end-effector and press Enter...")
+        if load > 0:
+            input("Press Enter to open the gripper")
+            airbot_play.move_eef_pos(0.074)
+            input(f"Apply {load}kg load to the end-effector and press Enter...")
+            airbot_play.move_eef_pos(0.0)
         record = []
         trails = 5
         for i in range(trails):
             print(f"\nTrail {i + 1}/{trails} for load {load}kg")
+            if i > 0:
+                input(
+                    "Manually pull the end of the robotic arm to cause fluctuations in the estimate."
+                )
             estimator.update_state(
                 airbot_play.get_joint_pos(),
                 airbot_play.get_joint_vel(),
@@ -55,10 +63,6 @@ if __name__ == "__main__":
             print("Current Pose:", airbot_play.get_end_pose())
 
             record.append(item)
-
-            input(
-                "Manually pull the end of the robotic arm to cause fluctuations in the estimate."
-            )
         all_recorded[load] = record
 
     path = Path("data/load_test_data.pkl")

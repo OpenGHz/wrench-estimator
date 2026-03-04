@@ -1,0 +1,14 @@
+# openspec/config.yaml
+schema: spec-driven
+
+context: |
+  文档语言：以中文为主
+
+# rules:
+#   proposal:
+#     - Include rollback plan
+#     - Identify affected teams
+#   specs:
+#     - Use Given/When/Then format for scenarios
+#   design:
+#     - Include sequence diagrams for complex flows
