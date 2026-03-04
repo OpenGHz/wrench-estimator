@@ -4,6 +4,7 @@ if __name__ == "__main__":
     import mujoco
     import pickle
     import json
+    import time
     from airbot_py.arm import AIRBOTPlay, RobotMode, SpeedProfile
     from wrench_estimator.wrench_estimator import WrenchEstimator
     from pathlib import Path
@@ -40,7 +41,7 @@ if __name__ == "__main__":
             airbot_play.move_eef_pos(0.074)
             input(f"Apply {load}kg load to the end-effector and press Enter...")
             airbot_play.move_eef_pos(0.0)
-        record = []
+        trail_records = []
         trails = 5
         for i in range(trails):
             print(f"\nTrail {i + 1}/{trails} for load {load}kg")
@@ -48,22 +49,29 @@ if __name__ == "__main__":
                 input(
                     "Manually pull the end of the robotic arm to cause fluctuations in the estimate."
                 )
-            estimator.update_state(
-                airbot_play.get_joint_pos(),
-                airbot_play.get_joint_vel(),
-                airbot_play.get_joint_eff(),
-            )
-            state = estimator.state
-            item = state | {
-                "ext_wrench": estimator.get_ext_wrench(),
-                "ee_pose": airbot_play.get_end_pose(),
-            }
+            record = []
+            for j in range(20):
+                print(j, end=" ", flush=True)
+                estimator.update_state(
+                    airbot_play.get_joint_pos(),
+                    airbot_play.get_joint_vel(),
+                    airbot_play.get_joint_eff(),
+                )
+                state = estimator.state
+                item = state | {
+                    "ext_wrench": estimator.get_ext_wrench(),
+                    "ee_pose": airbot_play.get_end_pose(),
+                }
+                record.append(item)
+                time.sleep(0.2)
+            else:
+                print() # for new line after the progress numbers
 
             print("Estimated External Wrench:", estimator.get_ext_wrench())
             print("Current Pose:", airbot_play.get_end_pose())
 
-            record.append(item)
-        all_recorded[load] = record
+            trail_records.append(record)
+        all_recorded[load] = trail_records
 
     path = Path("data/load_test_data.pkl")
     path.parent.mkdir(exist_ok=True)

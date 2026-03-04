@@ -70,6 +70,7 @@ if __name__ == "__main__":
 
     with suppress(KeyboardInterrupt):
         while True:
+            # TODO: 实时更新wrench的均值和方差
             estimator.update_state(
                 airbot_play.get_joint_pos(),
                 airbot_play.get_joint_vel(),
