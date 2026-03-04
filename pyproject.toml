@@ -23,7 +23,7 @@ extra-index-urls = ["https://mirrors.aliyun.com/pypi/simple/"]
 
 [tool.pixi.pypi-dependencies]
 wrench-estimator = { path = ".", editable = true }
-airbot-py = { path = "deps/airbot_py-5.1.6-py3-none-any.whl"}
+airbot-py = { path = "deps/airbot_py-5.1.6-py3-none-any.whl" }
 
 [tool.pixi.feature.build.pypi-dependencies]
 build = "*"
@@ -31,9 +31,14 @@ build = "*"
 [tool.pixi.feature.publish.dependencies]
 twine = "*"
 
+[tool.pixi.feature.plot.dependencies]
+matplotlib = "*"
+seaborn = "*"
+
 [tool.pixi.environments]
 build = ["build"]
 publish = ["publish"]
+plot = ["plot"]
 
 [tool.pixi.tasks]
 build = { cmd = "rm -rf dist && python -m build", default-environment = "build" }
