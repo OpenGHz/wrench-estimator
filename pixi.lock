@@ -22,18 +22,21 @@ environments:
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libgcc-ng-15.2.0-h69a702a_18.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libgomp-15.2.0-he0feb66_18.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/liblzma-5.8.2-hb03c661_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/liblzma-devel-5.8.2-hb03c661_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libnsl-2.0.1-hb9d3cd8_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libsqlite-3.51.2-hf4e2dac_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libstdcxx-15.2.0-h934c35e_18.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libuuid-2.41.3-h5347b49_0.conda
-      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libxcrypt-4.4.36-hd590300_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libzlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/ncurses-6.5-h2d0b736_3.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/openssl-3.6.1-h35e630c_1.conda
-      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/python-3.12.12-hd63d673_2_cpython.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/python-3.12.0-hab00c5b_0_cpython.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/readline-8.3-h853b02a_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/tk-8.6.13-noxft_h366c992_103.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/tzdata-2025c-hc9c84f9_1.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-5.8.2-ha02ee65_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-gpl-tools-5.8.2-ha02ee65_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-tools-5.8.2-hb03c661_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
       - pypi: https://mirrors.aliyun.com/pypi/packages/18/a6/907a406bb7d359e6a63f99c313846d9eec4f7e6f7437809e03aa00fa3074/absl_py-2.4.0-py3-none-any.whl
       - pypi: https://mirrors.aliyun.com/pypi/packages/c5/0d/84a4380f930db0010168e0aa7b7a8fed9ba1835a8fbb1472bc6d0201d529/build-1.4.0-py3-none-any.whl
@@ -77,18 +80,21 @@ environments:
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libgcc-ng-15.2.0-h69a702a_18.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libgomp-15.2.0-he0feb66_18.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/liblzma-5.8.2-hb03c661_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/liblzma-devel-5.8.2-hb03c661_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libnsl-2.0.1-hb9d3cd8_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libsqlite-3.51.2-hf4e2dac_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libstdcxx-15.2.0-h934c35e_18.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libuuid-2.41.3-h5347b49_0.conda
-      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libxcrypt-4.4.36-hd590300_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libzlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/ncurses-6.5-h2d0b736_3.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/openssl-3.6.1-h35e630c_1.conda
-      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/python-3.12.12-hd63d673_2_cpython.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/python-3.12.0-hab00c5b_0_cpython.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/readline-8.3-h853b02a_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/tk-8.6.13-noxft_h366c992_103.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/tzdata-2025c-hc9c84f9_1.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-5.8.2-ha02ee65_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-gpl-tools-5.8.2-ha02ee65_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-tools-5.8.2-hb03c661_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
       - pypi: https://mirrors.aliyun.com/pypi/packages/18/a6/907a406bb7d359e6a63f99c313846d9eec4f7e6f7437809e03aa00fa3074/absl_py-2.4.0-py3-none-any.whl
       - pypi: https://mirrors.aliyun.com/pypi/packages/e7/98/87b5946356095738cb90a6df7b35ff69ac5750f6e783d5fbcc5cb3b6cbd7/etils-1.13.0-py3-none-any.whl
@@ -156,11 +162,11 @@ environments:
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libgomp-15.2.0-he0feb66_18.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libiconv-1.18-h3b78370_2.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/liblzma-5.8.2-hb03c661_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/liblzma-devel-5.8.2-hb03c661_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libnsl-2.0.1-hb9d3cd8_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libsqlite-3.51.2-hf4e2dac_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libstdcxx-15.2.0-h934c35e_18.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libuuid-2.41.3-h5347b49_0.conda
-      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libxcrypt-4.4.36-hd590300_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libzlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/markdown-it-py-4.0.0-pyhd8ed1ab_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/mdurl-0.1.2-pyhd8ed1ab_1.conda
@@ -173,7 +179,7 @@ environments:
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/pycparser-2.22-pyh29332c3_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/pygments-2.19.2-pyhd8ed1ab_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/pysocks-1.7.1-pyha55dd90_7.conda
-      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/python-3.12.12-hd63d673_2_cpython.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/python-3.12.0-hab00c5b_0_cpython.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/python-gil-3.12.12-hd8ed1ab_2.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/python_abi-3.12-8_cp312.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/readline-8.3-h853b02a_0.conda
@@ -188,6 +194,9 @@ environments:
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/typing_extensions-4.15.0-pyhcf101f3_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/tzdata-2025c-hc9c84f9_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/urllib3-2.6.3-pyhd8ed1ab_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-5.8.2-ha02ee65_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-gpl-tools-5.8.2-ha02ee65_0.conda
+      - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-tools-5.8.2-hb03c661_0.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/zipp-3.23.0-pyhcf101f3_1.conda
       - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
       - pypi: https://mirrors.aliyun.com/pypi/packages/18/a6/907a406bb7d359e6a63f99c313846d9eec4f7e6f7437809e03aa00fa3074/absl_py-2.4.0-py3-none-any.whl
@@ -879,6 +888,7 @@ packages:
   - libgcc >=14
   license: MIT
   license_family: MIT
+  purls: []
   size: 58592
   timestamp: 1769456073053
 - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libgcc-15.2.0-he0feb66_18.conda
@@ -948,6 +958,16 @@ packages:
   license: 0BSD
   size: 113207
   timestamp: 1768752626120
+- conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/liblzma-devel-5.8.2-hb03c661_0.conda
+  sha256: dd246f80c9c1c27b87e586c33cf36db9340fb8078e9b805429063c2af54d34a4
+  md5: de60549ba9d8921dff3afa4b179e2a4b
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=14
+  - liblzma 5.8.2 hb03c661_0
+  license: 0BSD
+  size: 465085
+  timestamp: 1768752643506
 - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libnsl-2.0.1-hb9d3cd8_1.conda
   sha256: 927fe72b054277cde6cb82597d0fcf6baf127dcbce2e0a9d8925a68f1265eef5
   md5: d864d34357c3b65a4b731f78c0801dc4
@@ -993,15 +1013,6 @@ packages:
   purls: []
   size: 40311
   timestamp: 1766271528534
-- conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libxcrypt-4.4.36-hd590300_1.conda
-  sha256: 6ae68e0b86423ef188196fff6207ed0c8195dd84273cb5623b85aa08033a410c
-  md5: 5aa797f8787fe7a17d1b0821485b5adc
-  depends:
-  - libgcc-ng >=12
-  license: LGPL-2.1-or-later
-  purls: []
-  size: 100393
-  timestamp: 1702724383534
 - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/libzlib-1.3.1-hb9d3cd8_2.conda
   sha256: d4bfe88d7cb447768e31650f06257995601f89076080e76df55e3112d4e47dc4
   md5: edb0dca6bc32e4f4789199455a1dbeb8
@@ -1192,33 +1203,31 @@ packages:
   - pkg:pypi/pysocks?source=hash-mapping
   size: 21085
   timestamp: 1733217331982
-- conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/python-3.12.12-hd63d673_2_cpython.conda
-  build_number: 2
-  sha256: 6621befd6570a216ba94bc34ec4618e4f3777de55ad0adc15fc23c28fadd4d1a
-  md5: c4540d3de3fa228d9fa95e31f8e97f89
+- conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/python-3.12.0-hab00c5b_0_cpython.conda
+  sha256: 5398ebae6a1ccbfd3f76361eac75f3ac071527a8072627c4bf9008c689034f48
+  md5: 7f97faab5bebcc2580f4f299285323da
   depends:
-  - __glibc >=2.17,<3.0.a0
   - bzip2 >=1.0.8,<2.0a0
   - ld_impl_linux-64 >=2.36.1
-  - libexpat >=2.7.3,<3.0a0
-  - libffi >=3.5.2,<3.6.0a0
-  - libgcc >=14
-  - liblzma >=5.8.2,<6.0a0
-  - libnsl >=2.0.1,<2.1.0a0
-  - libsqlite >=3.51.2,<4.0a0
-  - libuuid >=2.41.3,<3.0a0
-  - libxcrypt >=4.4.36
-  - libzlib >=1.3.1,<2.0a0
-  - ncurses >=6.5,<7.0a0
-  - openssl >=3.5.4,<4.0a0
-  - readline >=8.3,<9.0a0
+  - libexpat >=2.5.0,<3.0a0
+  - libffi >=3.4,<4.0a0
+  - libgcc-ng >=12
+  - libnsl >=2.0.0,<2.1.0a0
+  - libsqlite >=3.43.0,<4.0a0
+  - libuuid >=2.38.1,<3.0a0
+  - libzlib >=1.2.13,<2.0.0a0
+  - ncurses >=6.4,<7.0a0
+  - openssl >=3.1.3,<4.0a0
+  - readline >=8.2,<9.0a0
   - tk >=8.6.13,<8.7.0a0
   - tzdata
+  - xz >=5.2.6,<6.0a0
   constrains:
   - python_abi 3.12.* *_cp312
   license: Python-2.0
-  size: 31457785
-  timestamp: 1769472855343
+  purls: []
+  size: 32123473
+  timestamp: 1696324522323
 - conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/noarch/python-gil-3.12.12-hd8ed1ab_2.conda
   sha256: 3307c01627ae45524dfbdb149f7801818608c9c49d88ac89632dff32e149057f
   md5: d41b6b394546ee6e1c423e28a581fc71
@@ -1481,11 +1490,48 @@ packages:
 - pypi: ./
   name: wrench-estimator
   version: 0.1.0
-  sha256: 9daf9660272e4d3194f45f4d75d5d1ded6bc80d9e88a95c0d3729e9c63c41993
+  sha256: 50897961aa1524b1f67837cbbc8981103c374d0614409d3e9e867295319f688b
   requires_dist:
   - numpy
   - mujoco>=2.3.7
-  requires_python: '>=3.10'
+  requires_python: '>=3.10,<3.13'
+- conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-5.8.2-ha02ee65_0.conda
+  sha256: 6d60b1870bdbbaf098bbc7d69e4f4eccb8a6b5e856c2d0aca3c62c0db97e0863
+  md5: d34b831f6d6a9b014eb7cf65f6329bba
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=14
+  - liblzma 5.8.2 hb03c661_0
+  - liblzma-devel 5.8.2 hb03c661_0
+  - xz-gpl-tools 5.8.2 ha02ee65_0
+  - xz-tools 5.8.2 hb03c661_0
+  license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+  size: 24101
+  timestamp: 1768752698238
+- conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-gpl-tools-5.8.2-ha02ee65_0.conda
+  sha256: a4876e9fb124665315aedfe96b1a832e2c26312241061d5f990208aaf380da46
+  md5: a159fe1e8200dd67fa88ddea9169d25a
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=14
+  - liblzma 5.8.2 hb03c661_0
+  constrains:
+  - xz 5.8.2.*
+  license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+  size: 33774
+  timestamp: 1768752679459
+- conda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/linux-64/xz-tools-5.8.2-hb03c661_0.conda
+  sha256: 65c8a236b89a4ad24565a986b7c00b8cb2906af52fd9963730c44ea56a9fde9a
+  md5: dfd6129671f782988d665354e7aa269d
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=14
+  - liblzma 5.8.2 hb03c661_0
+  constrains:
+  - xz 5.8.2.*
+  license: 0BSD AND LGPL-2.1-or-later
+  size: 96093
+  timestamp: 1768752662020
 - pypi: https://mirrors.aliyun.com/pypi/packages/2e/54/647ade08bf0db230bfea292f893923872fd20be6ac6f53b2b936ba839d75/zipp-3.23.0-py3-none-any.whl
   name: zipp
   version: 3.23.0
