@@ -4,6 +4,7 @@ if __name__ == "__main__":
     import mujoco
     import time
     import rerun as rr
+    import rerun.blueprint as rrb
     from contextlib import suppress
     from airbot_py.arm import AIRBOTPlay, RobotMode, SpeedProfile
     from wrench_estimator.wrench_estimator import WrenchEstimator
@@ -38,6 +39,35 @@ if __name__ == "__main__":
     airbot_play.get_joint_eff = lambda: np.asarray(get_joint_eff()) / coeff
 
     rr.init("wrench_estimation_test", spawn=True)
+
+    # Create a TimeSeries View
+    blueprint = rrb.Blueprint(
+        rrb.Vertical(
+            contents=[
+                rrb.TimeSeriesView(
+                    origin="wrench/force",
+                    # Set a custom Y axis.
+                    # axis_y=rrb.ScalarAxis(range=(-1.0, 1.0), zoom_lock=True),
+                    # Configure the legend.
+                    # plot_legend=rrb.PlotLegend(visible=True),
+                    # Set time different time ranges for different timelines.
+                    # time_ranges=[
+                    #     # Sliding window depending on the time cursor for the first timeline.
+                    #     rrb.VisibleTimeRange(
+                    #         "timeline0",
+                    #         start=rrb.TimeRangeBoundary.cursor_relative(seq=-100),
+                    #         end=rrb.TimeRangeBoundary.cursor_relative(),
+                    #     ),
+                    # ],
+                ),
+            ]
+        ),
+        auto_views=True,
+        auto_layout=True,
+        collapse_panels=False,
+    )
+    rr.send_blueprint(blueprint)
+
     with suppress(KeyboardInterrupt):
         while True:
             estimator.update_state(
@@ -58,14 +88,6 @@ if __name__ == "__main__":
                     labels=["force"],
                 ),
             )
-            # rr.log(
-            #     "wrench/force",
-            #     rr.SeriesLines(
-            #         colors=[[255, 0, 0], [0, 255, 0], [0, 0, 255]],
-            #         names=["x", "y", "z"],
-            #     ),
-            #     static=True,
-            # )
             for field, value in zip(("x", "y", "z"), force):
                 rr.log(f"wrench/force/{field}", rr.Scalars(value))
             f_magnitude = np.linalg.norm(force)
