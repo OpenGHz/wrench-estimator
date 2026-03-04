@@ -30,6 +30,8 @@ class WrenchEstimator:
         self.tau_measured = tau[: self.ndof].copy() if tau is not None else None
         mujoco.mj_forward(self.mj_model, self.mj_data)
 
+        self.state = {"q": q, "dq": dq, "tau": tau}
+
     def get_ext_wrench(self):
         if self.tau_measured is None:
             raise ValueError(

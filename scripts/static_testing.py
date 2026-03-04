@@ -1,9 +1,9 @@
 if __name__ == "__main__":
     import os
-    from airbot_py.arm import AIRBOTPlay, RobotMode
     import numpy as np
-    from wrench_estimator.wrench_estimator import WrenchEstimator
     import mujoco
+    from airbot_py.arm import AIRBOTPlay, RobotMode, SpeedProfile
+    from wrench_estimator.wrench_estimator import WrenchEstimator
 
     np.set_printoptions(precision=3, suppress=True, linewidth=1000)
 
@@ -20,10 +20,11 @@ if __name__ == "__main__":
 
     airbot_play = AIRBOTPlay("localhost", 50051)
     airbot_play.connect()
+    airbot_play.set_speed_profile(SpeedProfile.FAST)
     airbot_play.switch_mode(RobotMode.PLANNING_POS)
     target_pose = [[0.259, -0.026, 0.176], [0.0, 0.707, 0.0, 0.707]]
     airbot_play.move_to_cart_pose(target_pose)
-    input("Press Enter to continue")
+
     # convert current to torque using 0.6A per torque unit
     coeff = np.array([0.6, 0.6, 0.6, 1.35474, 1.32355, 1.5])
     get_joint_eff = airbot_play.get_joint_eff
