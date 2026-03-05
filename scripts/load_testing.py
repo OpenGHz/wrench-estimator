@@ -8,6 +8,7 @@ if __name__ == "__main__":
     from airbot_py.arm import AIRBOTPlay, RobotMode, SpeedProfile
     from wrench_estimator.wrench_estimator import WrenchEstimator
     from pathlib import Path
+    from pprint import pprint
 
     np.set_printoptions(precision=3, suppress=True, linewidth=1000)
 
@@ -32,25 +33,33 @@ if __name__ == "__main__":
     # convert current to torque using 0.6A per torque unit
     coeff = np.array([0.6, 0.6, 0.6, 1.35474, 1.32355, 1.5])
     get_joint_eff = airbot_play.get_joint_eff
-    # airbot_play.get_joint_eff = lambda: np.asarray(get_joint_eff()) / coeff
+    airbot_play.get_joint_eff = lambda: np.asarray(get_joint_eff()) / coeff
     all_recorded = {}
-    for load in (0, 0.5, 0.319, 0.382):
+    load_stats = {}
+    loads = (0, 0.5, 1.0, 1.5, 2.0)
+    loads = reversed(loads)
+    # loads = (0,)
+    for load in loads:
         print(f"\n=== Testing with {load}kg load ===")
+        input("Press Enter to open the gripper")
+        airbot_play.move_eef_pos(0.074)
         if load > 0:
-            input("Press Enter to open the gripper")
-            airbot_play.move_eef_pos(0.074)
             input(f"Apply {load}kg load to the end-effector and press Enter...")
             airbot_play.move_eef_pos(0.0)
         trail_records = []
-        trails = 5
+        trails = 1
         for i in range(trails):
             print(f"\nTrail {i + 1}/{trails} for load {load}kg")
-            if i > 0:
-                input(
-                    "Manually pull the end of the robotic arm to cause fluctuations in the estimate."
-                )
+            # if i > 0:
+            #     input(
+            #         "Manually pull the end of the robotic arm to cause fluctuations in the estimate."
+            #     )
+            # else:
+            #     print("Wait a moment for the initial estimate to stabilize...")
+            #     time.sleep(2)
+            input("Press Enter to start recording data for this trail...")
             record = []
-            for j in range(20):
+            for j in range(30):
                 print(j, end=" ", flush=True)
                 estimator.update_state(
                     airbot_play.get_joint_pos(),
@@ -65,7 +74,16 @@ if __name__ == "__main__":
                 record.append(item)
                 time.sleep(0.2)
             else:
-                print() # for new line after the progress numbers
+                print()  # for new line after the progress numbers
+                force_z = [r["ext_wrench"][2] for r in record]
+                stats = {
+                    "z_force_mean": np.mean(force_z),
+                    "z_force_std": np.std(force_z),
+                    "z_force_min": np.min(force_z),
+                    "z_force_max": np.max(force_z),
+                }
+                pprint(stats)
+                load_stats[load] = stats
 
             print("Estimated External Wrench:", estimator.get_ext_wrench())
             print("Current Pose:", airbot_play.get_end_pose())
@@ -87,6 +105,11 @@ if __name__ == "__main__":
     with open(json_path, "w") as f:
         json.dump(all_recorded, f, indent=4, default=default)
     print("Saved recorded data to", path.parent)
+
+    stats_path = Path("data/load_test_stats.json")
+    with open(stats_path, "w") as f:
+        json.dump(load_stats, f, indent=4)
+    print("Saved load test stats to", stats_path)
 
     airbot_play.disconnect()
     print("Done.")

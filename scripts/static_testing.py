@@ -8,6 +8,8 @@ if __name__ == "__main__":
     from contextlib import suppress
     from airbot_py.arm import AIRBOTPlay, RobotMode, SpeedProfile
     from wrench_estimator.wrench_estimator import WrenchEstimator
+    from collections import deque
+    from pprint import pprint
 
     np.set_printoptions(precision=3, suppress=True, linewidth=1000)
 
@@ -29,9 +31,9 @@ if __name__ == "__main__":
     target_pose = [[0.259, -0.026, 0.176], [0.0, 0.707, 0.0, 0.707]]
     airbot_play.move_to_cart_pose(target_pose)
 
-    # airbot_play.move_eef_pos(0.074)
-    # input("Apply load to the end-effector and press Enter...")
-    # airbot_play.move_eef_pos(0.0)
+    airbot_play.move_eef_pos(0.074)
+    input("Apply load to the end-effector and press Enter...")
+    airbot_play.move_eef_pos(0.0)
 
     # convert current to torque using 0.6A per torque unit
     coeff = np.array([0.6, 0.6, 0.6, 1.35474, 1.32355, 1.5])
@@ -69,6 +71,7 @@ if __name__ == "__main__":
     rr.send_blueprint(blueprint)
 
     with suppress(KeyboardInterrupt):
+        z_force_history = deque(maxlen=30)
         while True:
             # TODO: 实时更新wrench的均值和方差
             estimator.update_state(
@@ -76,6 +79,7 @@ if __name__ == "__main__":
                 airbot_play.get_joint_vel(),
                 airbot_play.get_joint_eff(),
             )
+            print(airbot_play.get_joint_vel())
             wrench = estimator.get_ext_wrench()
             force, torque = wrench[:3], wrench[3:]
             rr.set_time("timestamp", timestamp=time.time())
@@ -97,8 +101,20 @@ if __name__ == "__main__":
             #     rr.log(f"wrench/torque/{field}", rr.Scalars(value))
             print("Estimated External Wrench:", wrench)
             print("Current Pose:", airbot_play.get_end_pose())
+            z_force_history.append(force[2])
+            print("force_z_mean:", np.mean(z_force_history))
+            print("force_z_std:", np.std(z_force_history))
+            # pprint(
+            #     {
+            #         "z_force_mean": np.mean(z_force_history),
+            #         "z_force_std": np.std(z_force_history),
+            #         "z_force_min": np.min(z_force_history),
+            #         "z_force_max": np.max(z_force_history),
+            #     }
+            # )
             time.sleep(0.1)
 
+    
     airbot_play.disconnect()
 
     print("Done.")
