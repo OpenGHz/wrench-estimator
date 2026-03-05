@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import json
-
+from figure_export import save_publication_figure
+from plot import style_axes
 
 # 1. 原始数据与转换 (g 取 9.80665 以保证科学严谨)
 g = 9.80665
@@ -35,6 +36,7 @@ bars = ax.bar(
 )
 
 # 3. 细节美化
+style_axes(ax)
 ax.axhline(0, color="black", lw=1, ls="--")  # 零误差参考线
 ax.set_xlabel("Ground Truth Force (N)", fontweight="bold")
 ax.set_ylabel("Prediction Error (N)", fontweight="bold")
@@ -43,4 +45,6 @@ ax.set_xticklabels([f"{x:.1f}" for x in true_n])
 ax.grid(axis="y", ls=":", alpha=0.7)
 
 plt.tight_layout()
-plt.show()
+save_path = "data/prediction_error"
+save_publication_figure(fig, save_path, formats=["pdf"], dpi=300)
+# plt.show()
