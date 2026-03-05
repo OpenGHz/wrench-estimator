@@ -34,6 +34,8 @@ twine = "*"
 [tool.pixi.feature.plot.dependencies]
 matplotlib = "*"
 seaborn = "*"
+pandas = "*"
+ipykernel = "*"
 
 [tool.pixi.environments]
 build = ["build"]

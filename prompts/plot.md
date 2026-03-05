@@ -1,4 +1,4 @@
-我已经运行完scripts/load_testing.py生成了数据文件到data目录，请基于保存的数据（任选一种格式），在scripts目录下编写一个绘图脚本，横轴为真实重量，纵轴为估计的Z轴的力的数据点，绘制如下几幅图：
+我已经运行完scripts/load_testing.py生成了数据文件到data目录，请基于保存的数据（任选一种格式），绘制如下几幅图（横轴为真实重量，纵轴为估计的Z轴的力）：
 1. 散点图
 2. 箱线图
 3. 带有误差线的柱状图
@@ -6,9 +6,9 @@
 5. 对数据进行直线拟合后的散点+拟合线图
 
 要求：
+- 代码写到scripts/plot.ipynb
 - 绘图使用seaborn库
 - 示例
   - 绘图：tests/plot.py
   - 拟合：tests/fit.py
-- 代码写到scripts/plot.ipynb
 - 每幅图独立绘制
